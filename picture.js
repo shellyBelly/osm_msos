@@ -238,7 +238,7 @@ msos.picture.get_pixel_ratio = function ($elm) {
 				onload_add_zoom = function () {
 					$clone.fitImgs();
 
-					var $icon = $('<div  class="zoomify_icon">' + i18n.click + ' <i class="icon-zoom-in"></i></div>');
+					var $icon = $('<div  class="zoomify_icon">' + i18n.click + ' <i class="fa fa-search-plus"></i></div>');
 
 					msos.console.debug(temp_jtp + ' - onload_add_zoom -> start, id: ' + $clone.attr('id'));
 

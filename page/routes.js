@@ -20,7 +20,7 @@
 msos.provide("msos.page.routes");
 msos.require("msos.page");	// Already called, but here for ref.
 
-msos.page.routes.version = new msos.set_version(13, 11, 26);
+msos.page.routes.version = new msos.set_version(14, 4, 4);
 
 
 msos.page.routes.Router = Backbone.Router.extend({
@@ -89,7 +89,7 @@ msos.page.routes.Router = Backbone.Router.extend({
 		if (!pw.available[trac.group]) { this.vent.trigger('update_avail'); }
 
 		// Now check for valid page content
-		if (pw.available[trac.group].indexOf('#/page/' + name_page_js) === -1) {
+		if (pw.available[trac.group] && pw.available[trac.group].indexOf('#/page/' + name_page_js) === -1) {
 
 			// Alert user to page problem
 			msos.notify.error(lang.sorry + ' ' + lang.invalid_page + ' ' + name_page_js, lang.page_error);
