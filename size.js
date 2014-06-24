@@ -103,5 +103,8 @@ msos.size.selection = function ($container) {
     );
 };
 
-// Run immediately, when available
+// Run immediately
 msos.size.set_display();
+
+// Run on orientation change
+msos.onorientationchange_functions.push(msos.size.set_display);
