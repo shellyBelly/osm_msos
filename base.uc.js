@@ -864,7 +864,7 @@ msos.run_function_array = function (name) {
 		try {
 			msos[name][m]();
 		} catch (e) {
-			msos.console.error(temp_fa + 'for: ' + name + ', name: ' + e.name, e);
+			msos.console.error(temp_fa + 'for: ' + name, e);
 		}
 	}
 
