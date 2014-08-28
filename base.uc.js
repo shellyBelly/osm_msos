@@ -853,7 +853,7 @@ msos.run_function_array = function (name) {
 	msos.console.debug(temp_fa + 'start: ' + name);
 
 	if (!msos[name] || !(_.isArray(msos[name]))) {
-		msos.console.error(temp_fa + 'for name: ' + name + ', failed.');
+		msos.console.error(temp_fa + 'for: ' + name + ', failed.');
 		return;
 	}
 
@@ -864,7 +864,7 @@ msos.run_function_array = function (name) {
 		try {
 			msos[name][m]();
 		} catch (e) {
-			msos.console.error(temp_fa + 'for: ' + name + ', name: ' + e.name + ', error: ' +  e.message);
+			msos.console.error(temp_fa + 'for: ' + name + ', name: ' + e.name, e);
 		}
 	}
 
