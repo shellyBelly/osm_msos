@@ -819,27 +819,17 @@ msos.generate_url_name = function (url) {
 
 	var path,
 		parts = [],
-		pl = 0,
-		j = 0,
-		idx = 0,
-		last = '',
 		name = '';
 
 	path = msos.purl(url).attr('path');
 
 	parts = path.split('/');
-	pl = parts.length;
-	last = parts[pl - 1];
-	idx = last.indexOf('?');
-	name = idx !== -1 ? last.substring(0, idx) : last;
 
-	// Add back folder names
-	for (j = 2; j < (pl - j); j += 1) {
-		name = parts[pl - j] + ':' + name;
-	}
+	// Remove first two "commom" elements and clean up for use as key
+	name = parts.slice(2).join(':');
+	name = name.replace(/[^0-9a-zA-Z]/g, '_');
 
-	// Clean up for use as key
-	return name.replace(/[^0-9a-zA-Z]/g, '_');
+	return name;
 };
 
 msos.run_function_array = function (name) {
